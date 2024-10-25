@@ -1,56 +1,53 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.getElementById('menu-toggle');
-    const sideMenu = document.getElementById('side-menu');
-    const body = document.body;
+function toggleMenu() {
+    const menu = document.querySelector(".menu-links");
+    const icon = document.querySelector(".hamburger-icon");
+    menu.classList.toggle("open");
+    icon.classList.toggle("open");
+  }
+  
+// Dark / light mode
 
-    // Menu toggle functionality
-    menuToggle.addEventListener('click', function() {
-        sideMenu.classList.toggle('expanded');
-        body.classList.toggle('menu-open');
-    });
+const btn = document.getElementById("modeToggle");
+const btn2 = document.getElementById("modeToggle2");
+const themeIcons = document.querySelectorAll(".icon");
+const currentTheme = localStorage.getItem("theme");
 
-    // Trigger sidebar expansion by clicking on the initial sidebar icon
-    sideMenu.addEventListener('click', function() {
-        if (!sideMenu.classList.contains('expanded')) {
-            body.classList.toggle('menu-open');
-        }
-    });
+if (currentTheme === "dark") {
+  setDarkMode();
+}
 
-    // Smooth scroll functionality for side-menu links
-    document.querySelectorAll('.side-menu a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Smooth scroll functionality for the buttons
-    document.querySelectorAll('.button-icon[href^="#"], .about-button[href^="#"]').forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Function to add fade-in class
-    const fadeInElements = document.querySelectorAll('.fade-in');
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-visible');
-                observer.unobserve(entry.target); // Remove this line if you want the animation to repeat
-            } else {
-                entry.target.classList.remove('fade-in-visible'); // Remove this line if you want the animation to repeat
-            }
-        });
-    }, { threshold: 0.1 });
-
-    fadeInElements.forEach(el => {
-        observer.observe(el);
-    });
+btn.addEventListener("click", function () {
+  setTheme();
 });
+
+btn2.addEventListener("click", function () {
+  setTheme();
+});
+
+function setTheme() {
+  let currentTheme = document.body.getAttribute("theme");
+
+  if (currentTheme === "dark") {
+    setLightMode();
+  } else {
+    setDarkMode();
+  }
+}
+
+function setDarkMode() {
+  document.body.setAttribute("theme", "dark");
+  localStorage.setItem("theme", "dark");
+
+  themeIcons.forEach((icon) => {
+    icon.src = icon.getAttribute("src-dark");
+  });
+}
+
+function setLightMode() {
+  document.body.removeAttribute("theme");
+  localStorage.setItem("theme", "light");
+
+  themeIcons.forEach((icon) => {
+    icon.src = icon.getAttribute("src-light");
+  });
+}

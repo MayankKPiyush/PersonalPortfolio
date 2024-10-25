@@ -1,223 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Zero</title>
-</head>
-<body>
-    <nav class="side-menu" id="side-menu">
-        <ul>
-            <li class="logo fade-in">
-                <a href="#">ZEЯO</a>
-            </li>
-            <li class="fade-in">
-                <a href="#home" class="item-list">
-                    <i class="ri-home-2-fill"></i>
-                    <span class="text">Home</span>
-                </a>
-            </li>
-            <li class="fade-in">
-                <a href="#about" class="item-list">
-                    <i class="ri-user-3-line"></i>
-                    <span class="text">About</span>
-                </a>
-            </li>
-            <li class="fade-in">
-                <a href="#experience" class="item-list">
-                    <i class="ri-customer-service-line"></i>
-                    <span class="text">Experienece</span>
-                </a>
-            </li>
-            <li class="fade-in">
-                <a href="#contact" class="item-list">
-                    <i class="ri-message-2-line"></i>
-                    <span class="text">Contact</span>
-                </a>
-            </li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZEROO</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">ZEЯO</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <img
+              id="modeToggle"
+              class="icon color-icon"
+              src="assets\theme_light.png"
+              src-light="assets\theme_light.png"
+              src-dark="assets\theme_dark.png"
+              alt="Color them icon"
+            />
+          </li>
         </ul>
+      </div>
     </nav>
-    <button class="menu-toggle" id="menu-toggle">☰</button>
-
-    <section class="home" id="home">
-        <div class="home-content">
-            <h1 class="title fade-in">Hi, It's <span>Zero!</span></h1>
-            <h3 class="fade-in">I excel at finding lost socks, making awkward situations <br> even funnier, and accidentally turning normal days into<br> adventures. Nice to meet you!</h3>
-            <a href="#contact" class="button button-icon fade-in">
-                Contact me
-                <div class="icon-btn"> 
-                    <i class="ri-send-plane-2-line button--icon"></i>
-                </div>
-            </a>
-            <hr class="custom-line fade-in">
-            <div class="social-icon fade-in">
-                <a href="https://github.com/MayankKPiyush" target="_blank"><i class="ri-github-line"></i></a>
-                <a href="https://discord.com/channels/671801399159292060/671801399658545154" target="_blank"><i class="ri-discord-line"></i></a>
-                <a href="https://www.instagram.com/mayank._.kumar/" target="_blank"><i class="ri-instagram-line"></i></a>
-                <a href="https://open.spotify.com/user/314rtn5pevbvcinecvvlpgajokc4" target="_blank"><i class="ri-spotify-line"></i></a>
+    <nav id="hamburger-nav">
+      <div class="logo">ZEЯO</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <li>
+            <img
+              id="modeToggle2"
+              class="icon color-icon"
+              src="assets\theme_light.png"
+              src-light="assets\theme_light.png"
+              src-dark="assets\theme_dark.png"
+              alt="Color them icon"
+            />
+          </li>
+        </div>
+      </div>
+    </nav>
     
-            </div>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="assets\Profile.png" alt="John Doe profile picture" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Mayank</h1>
+        <p class="section__text__p2">Debuginator</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('https://drive.google.com/file/d/1JVO_y2NThUy-o81rSlZSbzP29TgdG_s7/view?usp=drive_link')"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact Info
+          </button>
         </div>
-        <div class="home-img fade-in">
-            <img src="Images\home.png" alt="Home Image">
+        <div id="socials-container">
+          <img
+            src="assets\Linkedin.png"
+            src-light="assets\Linkedin.png"
+            src-dark="assets\linkedin_dark.png"
+            alt="My LinkedIn profile"
+            class="icon linkedin-icon"
+            onclick="location.href='https://www.linkedin.com/in/mayank-kumar-piyush-89970729a/'"
+          />
+          <img
+            src="assets\Github.png"
+            src-light="assets\Github.png"
+            src-dark="assets\github_dark.png"
+            alt="My Github profile"
+            class="icon github-icon"
+            onclick="location.href='https://github.com/MayankKPiyush'"
+          />
+          <img
+            src="assets\Instagram.png"
+            src-light="assets\Instagram.png"
+            src-dark="assets\instagram-light.png"
+            alt="My Instagram profile"
+            class="icon instagram-icon"
+            onclick="location.href='https://www.instagram.com/mayank._.kumar/'"
+          />
         </div>
+      </div>
     </section>
-
-    <section class="about" id="about">
-        <h2 class="section--title fade-in">About Me</h2>
-
-        <div class="about-content">
-            <div class="about-img fade-in">
-                <img src="Images\about.png" alt="Home image">
-            </div>
-            
-            <div class="about-data fade-in">
-                <h3 class="subtitle">Just a quick overview.</h3>
-                <p class="description">
-                    Hi! I’m someone who loves to laugh, enjoys a good joke, and <br> is always up for a friendly chat. I believe that a great conversation <br> can brighten the day and that humor is the best way to connect<br> with others. Let’s connect and share some smiles!
-                </p>
-                <a href="#contact" class="about-button button-icon fade-in">
-                    Let’s Connect
-                    <div class="icon-btn"> 
-                        <i class="ri-send-plane-2-line button--icon"></i>
-                    </div>
-                </a>
-            </div>
+    <section id="about">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img
+            src="assets\AboutMe.png"
+            alt="Profile picture"
+            class="about-pic"
+          />
         </div>
-        <h2 class="about-skill fade-in">Skills</h2>
-        <p class="skill-list fade-in">Java, C++, C, SQL, Html, JavaScript, Css</p>
-    </section>
-
-    <section class="experience fade-in" id="experience">
-        <h2 class="experience-title fade-in">Insights into My Experience</h2>
-        <div class="projects">
-
-            <div class="project1">
-                <div class="icon">
-                    <i class="ri-paint-line"></i>
-                </div>
-
-                <div class="project1-content">
-                    <h5 class="project-title">My Personal Portfolio</h5>
-
-                    <p class="project-detail">
-                        I designed and developed a dynamic and responsive portfolio website 
-                        to showcase my skills and projects. The website is built using HTML, 
-                        CSS, and JavaScript, with a focus on clean design, usability, and 
-                        performance.
-                    </p>
-                    <a href="#" class="project1-btn">
-                        -Explore Further-
-                    </a>
-                </div>
-
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+                src="assets\Experience.png"
+                src-light="assets\Experience.png"
+                src-dark="assets\experience_dark.png"
+                alt="Experience icon"
+                class="icon"
+              />
+              <h3>Experience</h3>
+              <p>0 years <br /></p>
             </div>
-
-            <div class="project2">
-                <div class="icon">
-                    <i class="ri-paint-line"></i>
-                </div>
-
-                <div class="project2-content">
-                    <h5 class="project-title">APIs based Weather Application</h5>
-                    <p class="project-detail">
-                        I developed a real-time weather information application using HTML, 
-                        CSS, and JavaScript. This application leverages a weather API to provide
-                        users with current weather data for any location.
-                    </p>
-                    <a href="https://github.com/MayankKPiyush/Weather" target="_blank" class="project2-btn">
-                        -Explore Further-
-                    </a>
-                </div>
-
+            <div class="details-container">
+              <img
+                src="assets\Education.png"
+                src-light="assets\Education.png"
+                src-dark="assets\education_dark.png"
+                alt="Education icon"
+                class="icon"
+              />
+              <h3>Education</h3>
+              <p>Bachelor of Technology<br /></p>
             </div>
-
-            <div class="project3">
-                <div class="icon">
-                    <i class="ri-paint-line"></i>
-                </div>
-
-                <div class="project3-content">
-                    <h5 class="project-title">QR Code Generator</h5>
-                    <p class="project-detail">
-                        I developed a QR code generator application using HTML, CSS, 
-                        and JavaScript. This application utilizes a QR code API to 
-                        create QR codes from user-inputted data instantly.
-                    </p>
-                    <a href="https://github.com/MayankKPiyush/Qr-Code-Generator" target="_blank" class="project3-btn">
-                        -Explore Further-
-                    </a>
-                </div>
-
-            </div>
-
-            <div class="project4">
-                <div class="icon">
-                    <i class="ri-paint-line"></i>
-                </div>
-
-                <div class="project4-content">
-                    <h5 class="project-title">Tic-Tac-Toe</h5>
-                    <p class="project-detail">
-                        I created a classic Tic-Tac-Toe game using HTML, CSS, 
-                        and JavaScript. It features two-player interactive gameplay, 
-                        a modern design, responsive layout for all devices, and 
-                        winning logic detection.
-                    </p>
-                    <a href="https://github.com/MayankKPiyush/Tic-Tac-Toe" target="_blank" class="project4-btn">
-                        -Explore Further-
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <section class="contact fade-in" id="contact">
-        <h2 class="contact-title fade-in">Reach Out and Say Hi!</h2>
-        <h3 class="contact-subtitle fade-in">Have Questions?</h3>
-
-        <div class="contact-detail fade-in">
-
-            <div class="information">
-                <i class="ri-discord-line"></i>
-                <h3 class="discord-subtitle">Discord</h3>
-                <span class="discord-id">_mayankkumar</span>
-            </div>
-        
-            <div class="information">
-                <i class="ri-mail-line"></i>
-                <h3 class="mail-subtitle">Email</h3>
-                <span class="discord-id">alphazero0130@gmail.com</span>
-            </div>
-        
-            <div class="information">
-                <i class="ri-github-line"></i>
-                <h3 class="github-subtitle">Github</h3>
-                <span class="discord-id">MayankKPiyush</span>
-            </div>
-            
-        </div>
-        
-
-          
-    </section>
-    <footer class="footer">
-        <div class="footer-content">
-          <div class="left">
-            © 2024 ZEЯO. All rights reserved.
           </div>
-          <div class="right">
-            <a href="#privacy-policy">Privacy Policy</a>
-            <a href="#terms-of-use">Terms of Use</a>
+          <div class="text-container">
+            <p>
+               B.Tech (CS) student with hands-on experience in software development using Java, HTML, CSS, JavaScript, and
+               MySQL, and a good flair for problem-solving and leadership acquired during my projects. I have developed critical
+               skills in project management and collaboration while enhancing my technical knowledge. With these skills, I aspire
+               to excel in my professional journey.
+                
+            </p>
           </div>
         </div>
+      </div>
+      <img
+        src="assets\Arrow.png"
+        src-light="assets\Arrow.png"
+        src-dark="assets\arrow_dark.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#experience'"
+      />
+    </section>
+    <section id="experience">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Skills</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <!-- <h2 class="experience-sub-title">Skills</h2> -->
+            <div class="article-container">
+              <article>
+                <img
+                  src="assets\Skill.png"
+                  src="assets\Skill.png"
+                  src-dark="assets\checkmark_dark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>HTML</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                src="assets\Skill.png"
+                src="assets\Skill.png"
+                src-dark="assets\checkmark_dark.png"
+                alt="Experience icon"
+                class="icon"
+              />
+                <div>
+                  <h3>CSS</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                src="assets\Skill.png"
+                src="assets\Skill.png"
+                src-dark="assets\checkmark_dark.png"
+                alt="Experience icon"
+                class="icon"
+              />
+                <div>
+                  <h3>JavaScript</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                src="assets\Skill.png"
+                src="assets\Skill.png"
+                src-dark="assets\checkmark_dark.png"
+                alt="Experience icon"
+                class="icon"
+              />
+                <div>
+                  <h3>JAVA</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                src="assets\Skill.png"
+                src="assets\Skill.png"
+                src-dark="assets\checkmark_dark.png"
+                alt="Experience icon"
+                class="icon"
+              />
+                <div>
+                  <h3>C </h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img
+                src="assets\Skill.png"
+                src="assets\Skill.png"
+                src-dark="assets\checkmark_dark.png"
+                alt="Experience icon"
+                class="icon"
+              />
+                <div>
+                  <h3>C++</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="details-container">
+            <!-- <h2 class="experience-sub-title">Skills</h2> -->
+            <div class="article-container">
+              <article>
+                <img
+                src="assets\Skill.png"
+                src="assets\Skill.png"
+                src-dark="assets\checkmark_dark.png"
+                alt="Experience icon"
+                class="icon"
+              />
+                <div>
+                  <h3>SQL</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+              </article>
+              <article>
+                <img
+                src="assets\Skill.png"
+                src="assets\Skill.png"
+                src-dark="assets\checkmark_dark.png"
+                alt="Experience icon"
+                class="icon"
+              />
+                <div>
+                  <h3>GitHub</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="assets\Arrow.png"
+        src-light="assets\Arrow.png"
+        src-dark="assets\arrow_dark.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#projects'"
+      />
+    </section>
+    <section id="projects">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="assets\Portfolio.jpg"
+                alt="Project 1"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">My Portfolio</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/MayankKPiyush'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='#'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="assets\Weather.jpg"
+                alt="Project 2"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">API based Weather App</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/MayankKPiyush/Weather'"
+              >
+                Github
+              </button>
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="assets\QRCODE.jpg"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">QR Code Generator</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/MayankKPiyush/Qr-Code-Generator'"
+              >
+                Github
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="assets\Arrow.png"
+        src-light="assets\Arrow.png"
+        src-dark="assets\arrow_dark.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#contact'"
+      />
+    </section>
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="assets\Email.png"
+            src-light="assets\Email.png"
+            src-dark="assets\email_dark.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:mayankkr0160@gmail.com">mayankkr0160@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="assets\Linkedin.png"
+            src-light="assets\Linkedin.png"
+            src-dark="assets\linkedin_dark.png"
+            alt="My LinkedIn profile"
+            class="icon linkedin-icon"
+            onclick="location.href='https://www.linkedin.com/in/mayank-kumar-piyush-89970729a/'"
+          />
+          <p><a href="https://www.linkedin.com/in/mayank-kumar-piyush-89970729a">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2024 Zero. All Rights Reserved.</p>
     </footer>
-    
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
